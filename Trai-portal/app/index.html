@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="TRAI customer Portal">
+  <title>TRAI customer Portal</title>
+
+  <!-- Place favicon.ico in the `app/` directory -->
+
+  <!-- Chrome for Android theme color -->
+  <meta name="theme-color" content="#2E3AA1">
+
+  <!-- Web Application Manifest -->
+  <link rel="manifest" href="manifest.json">
+
+  <!-- Tile color for Win8 -->
+  <meta name="msapplication-TileColor" content="#3372DF">
+
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="application-name" content="PSK">
+  <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
+
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="TRAI customer Portal">
+  <link rel="apple-touch-icon" href="images/touch/apple-touch-icon.png">
+
+  <!-- Tile icon for Win8 (144x144) -->
+  <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+
+  <!-- build:css styles/main.css -->
+  <link rel="stylesheet" href="styles/main.css">
+  <!-- endbuild-->
+
+  <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <!-- endbuild -->
+
+  <!-- Because this project uses vulcanize this should be your only html import
+       in this file. All other imports should go in elements.html -->
+  <link rel="import" href="elements/elements.html">
+
+  <!-- For shared styles, shared-styles.html import in elements.html -->
+  <style is="custom-style" include="shared-styles"></style>
+  <!--<style type="text/css">
+    .circle {
+    left: 80px;
+   /* position: center;*/
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+    border-radius: 100px;
+    background-image: url('https://upload.wikimedia.org/wikipedia/en/3/34/Bharti_Airtel_Limited.png') ;
+    background-size: 100px;   
+    background-position:50%;
+    background-repeat:no-repeat;
+}
+  </style>  -->
+ 
+</head>
+
+<body unresolved>
+  <!-- build:remove -->
+  <span id="browser-sync-binding"></span>
+  <!-- endbuild -->
+
+  <template is="dom-bind" id="app">
+
+    <paper-drawer-panel id="paperDrawerPanel" responsive-width="700px">
+      <!-- Drawer Scroll Header Panel -->
+      <paper-scroll-header-panel drawer fixed>
+
+         <!-- Drawer Toolbar -->
+        <paper-toolbar id="drawerToolbar">
+          <span class="menu-name"><B>TRAI</B></span>
+        </paper-toolbar>
+
+        <!-- Drawer Content -->
+        <paper-menu class="app-menu" attr-for-selected="data-route" selected="[[route]]">
+          <a data-route="home" href="{{baseUrl}}">
+            <iron-icon icon="home"></iron-icon>
+            <span>Home</span>
+          </a>
+
+           <a data-route="sign" href="{{baseUrl}}sign">
+            <iron-icon icon="mail"></iron-icon>
+            <span>Signup</span>
+          </a>
+
+          <a data-route="users" href="{{baseUrl}}users">
+            <iron-icon icon="info"></iron-icon>
+            <span>Network Coverage</span>
+          </a>
+
+       
+             <a href="/issue.html">
+      <iron-icon icon="icons:room"></iron-icon>
+            <span>Complaint History</span>
+          </a>
+         
+
+          <a data-route="feedback" href="{{baseUrl}}feedback">
+            <iron-icon icon="mail"></iron-icon>
+            <span>Forum</span>
+          </a>
+
+          <a data-route="trai" href="{{baseUrl}}trai">
+            <iron-icon icon="mail"></iron-icon>
+            <span>Forum</span>
+          </a>
+
+        </paper-menu>
+      </paper-scroll-header-panel>
+
+      <!-- Main Area -->
+      <paper-scroll-header-panel class="flex" main id="headerPanelMain" condenses noReveal>
+        <!-- Main Toolbar -->
+        <paper-toolbar id="mainToolbar" class="tall">
+          <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
+
+          <span class="space"></span>
+
+          <!-- Application name -->
+          <div class="middle middle-container">
+            <div class="app-name">TRAI customer Portal</div>
+          </div>
+
+          <!-- Application sub title -->
+          <div class="bottom bottom-container">
+            <div class="bottom-title">A better way to raise complaints</div>
+          </div>
+        </paper-toolbar>
+
+        <!-- Main Content -->
+        <div class="content">
+          <iron-pages attr-for-selected="data-route" selected="{{route}}">
+            <section data-route="home">
+            <paper-material elevation="1" style="background:snowwhite;">
+              <!-- <div class="circle"></div> -->
+              <p>
+             <h1>  <b> Mobile Cell Phone Network Not Working Problem and Solution – How to Solve No Network Problem in any Mobile Cell Phone</b> </h1>
+               <span></span>
+
+Manually search for network. If there is NO Network then there is problem in the Antenna Switch. Repair or Replace the Antenna Switch to solve the problem.If there is Network after Manual Search but the Home Network could not be selected then there is problem in the PFO. Repair or change the PFO.If the Network gets disconnected during phone call there repair or change the Network IC.Clean the Antenna Tips and Antenna Point.If there is still Network Problem then Heat or Change the 26 MHz Crystal Oscillator.If the problem is not solved then Heat or Change the Antenna Switch. You can also jumper if Antenna Switch is not available.Heat, Change or Jumper the PFO if the problem still persists.Heat, Reball or Change the Network IC.Heat, Reball or Change the Power IC.Heat, Reball or Change the CPU.
+              </p>
+
+
+
+              <!-- <paper-input label=""></paper-input> -->
+
+<!-- <a href="/issue.html" tabindex="-1">
+              <paper-button raised >Google</paper-button>
+              </a> -->
+            </paper-material>
+               
+          <paper-material elevation="1" style="background:snowwhite;" >
+            <p>
+             <h1><b> Mobile Cell Phone SIM Not Working Problem and Solution – How to Solve SIM Card Fault in any Mobile Cell Phone</b></h1>
+             <span></span>
+Check settings and see if the mobile phone is in Flight Mode or Not. If it is in “Flight Mode” then change the Mode to Normal.Clean SIM Card Tips and SIM Connector.If the problem is not solved then change the SIM Card and Check.If the problem still persists then Change the SIM Connector.If you still do not find solution to the problem then Check Track of the SIM Section. Refer to the Diagram of the Particular Model of the Mobile Phone. Books with Diagrams of Tracks are available in the Market and on the Internet.If the problem is still not solved then Heat or Change the SIM IC.Finally, Heat, Reball or Change the Power IC.
+            </p>
+          </paper-material>
+             
+               <paper-material elevation="1" style="background:snowwhite;" >
+            <p>
+           <h1>  <b> DND de-registration through SMS to 1909.</b> </h1>
+             <span></span>
+De-registration of DND services is easy and convenient through SMS. Send SMS STOP to1909 from your mobile number.
+
+You will get an SMS from your mobile operator confirming the DND (now NCPR) de-registration request.
+[9:59 AM, 7/10/2016] +91 96776 71572: Deactivate DND through voice call to 1909.
+
+Dial 1909 from your mobile number and choose from either to speak with customer care executive or IVR (Interactive Voice Response system).
+
+If you choose to speak with Customer care executive, ask the executive to de-register DND services (now NCPR). The executive will confirm you the cancel request and you will get an SMS confirming your request.
+            </p>
+          </paper-material>
+
+            </section>
+
+            <section data-route="users">
+             <div style="overflow: hidden; "> 
+             <!-- margin: 15px auto; -->
+            <iframe scrolling="no" src="http://www.opensignal.com" style="border: 0px none; margin-left: -50px; height: 1050px; margin-top: -130px; width: 1150px;">
+            </iframe>
+            </div>
+            </section>
+            <section data-route="contact">
+              
+            </section>
+
+             <section data-route="sign">
+              <paper-material elevation="1" style="background:#2c3940;">
+                <h1 style="color:white;"><b>SIGN-UP</b></h1>
+        <paper-input label="Name:"></paper-input>
+        <paper-input label="Aadhar Id:"></paper-input>
+        <paper-input style="color:white;" type="number" label="Mobile No:"><div prefix>+91 &nbsp;</div></paper-input>
+        <paper-input label="Email-id:"></paper-input>
+
+        <!-- <paper-textarea label="autoresizing textarea input"></paper-textarea> -->
+        <paper-input label="password :" type="password"></paper-input>
+        <a href="index.html">
+        <paper-button raised style="background:#2E9FFF; color:black;" onclick="{{baseUrl}}">Signup</paper-button>
+        </a>
+        <!-- <paper-input label="disabled input" disabled></paper-input> -->
+
+              </paper-material>
+            </section>
+
+            <section data-route="feedback">
+              
+<script>
+
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = 'https://trai.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+    <script id="dsq-count-scr" src="//trai.disqus.com/count.js" async></script>
+        <!-- Main Content -->
+        <paper-material elevation="1">
+        <div class="content">
+          <div id="disqus_thread"></div>
+          </div>  
+        </paper-material>
+        
+         
+      </paper-scroll-header-panel>
+    </paper-drawer-panel>
+
+    <paper-toast id="toast">
+      <span class="toast-hide-button" role="button" tabindex="0" onclick="app.$.toast.hide()">Ok</span>
+    </paper-toast>
+
+            </section>
+
+
+            <section data-route="trai">
+            
+            </section>
+          </iron-pages>
+        </div>
+      </paper-scroll-header-panel>
+    </paper-drawer-panel>
+
+    <paper-toast id="toast">
+      <span class="toast-hide-button" role="button" tabindex="0" onclick="app.$.toast.hide()">Ok</span>
+    </paper-toast>
+
+    <!-- Uncomment next block to enable Service Worker support (1/2) -->
+    <!--
+    <paper-toast id="caching-complete"
+                 duration="6000"
+                 text="Caching complete! This app will work offline.">
+    </paper-toast>
+
+    <platinum-sw-register auto-register
+                          clients-claim
+                          skip-waiting
+                          base-uri="bower_components/platinum-sw/bootstrap"
+                          on-service-worker-installed="displayInstalledToast">
+      <platinum-sw-cache default-cache-strategy="fastest"
+                         cache-config-file="cache-config.json">
+      </platinum-sw-cache>
+    </platinum-sw-register>
+    -->
+
+  </template>
+
+  <!-- build:js scripts/app.js -->
+  <script src="scripts/app.js"></script>
+  <!-- endbuild-->
+</body>
+
+</html>
