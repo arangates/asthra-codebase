@@ -1,0 +1,30 @@
+{
+  "name": "login-form",
+  "description": "Polymer Login element",
+  "authors": [
+    "Ybenz11"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#master"
+  },
+  "license": "MIT",
+  "main": "login-form/login-form.html",
+  "keywords": [
+    "Polymer",
+    "web-components"
+  ],
+  "devDependencies": {
+    "polymer": "Polymer/polymer#~0.5.5"
+  },
+  "homepage": "https://github.com/youssef06/polymer-login-form",
+  "_release": "29c09b200c",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "29c09b200c1c24b79054aaa2c9d3865848aae1ad"
+  },
+  "_source": "git://github.com/youssef06/polymer-login-form.git",
+  "_target": "*",
+  "_originalSource": "login-form",
+  "_direct": true
+}
