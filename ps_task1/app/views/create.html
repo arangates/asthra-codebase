@@ -1,0 +1,105 @@
+<div class="well">
+    <div class="form-fields" ng-hide="previewMode">
+        <h3>Form Builder</h3>
+        <div class="add-field">
+            <select ng-model="addField.new" ng-options="type.name as type.value for type in addField.types"></select>
+            <button type="submit" class="btn" ng-click="addNewField()">Add Field</button>
+        </div>
+        <hr>
+        <p ng-show="form.form_fields.length == 0">No fields added yet.</p>
+        <accordion close-others="accordion.oneAtATime">
+            <accordion-group heading="{{field.field_title}}" ng-repeat="field in form.form_fields">
+
+                <div class="accordion-edit">
+                    <button class="btn btn-danger pull-right" type="button" ng-click="deleteField(field.field_id)">Delete</button>
+
+                    <div class="row">
+                        <div class="span2">Field ID: </div>
+                        <div class="span4">{{field.field_id}}</div>
+                    </div>
+
+                    <div class="row">
+                        <div class="span2">Field Type:</div>
+                        <div class="span4">{{field.field_type}}</div>
+                    </div>
+
+                    <div class="clear"></div> <hr>
+
+                    <div class="row">
+                        <div class="span2">Field Title:</div>
+                        <div class="span4"><input type="text" ng-model="field.field_title" value="{{field.field_title}}"></div>
+                    </div>
+                    <div class="row">
+                        <div class="span2">Field Default Value:</div>
+                        <div class="span4"><input type="text" ng-model="field.field_value" value="{{field.field_value}}"></div>
+                    </div>
+                    <div class="row" ng-show="showAddOptions(field)">
+                        <div class="span2">Field Options:</div>
+                        <div class="span6">
+                            <div ng-repeat="option in field.field_options">
+                                <input type="text" ng-model="option.option_title" value="{{option.option_title}}">
+                                <a class="btn btn-danger btn-mini right" type="button" ng-click="deleteOption(field, option)"></a>
+                                <span class="label label-inverse">Value: {{ option.option_value }}</span>
+                            </div>
+                            <button class="btn btn-primary btn-small" type="button" ng-click="addOption(field)">Add Option</button>
+                        </div>
+                    </div>
+                </div>
+            </accordion-group>
+        </accordion>
+
+        <p class="text-center">
+            <button class="btn btn-primary right" type="button" ng-click="previewOn()">Render form</button>
+        </p>
+
+        <br>
+        <hr>
+
+		<div class="text-center">
+			<a class="btn btn-small btn-primary" ng-show="!showJson" ng-click="showJson = true">Show json</a>
+			<a class="btn btn-small btn-inverse" ng-show="showJson" ng-click="showJson = false">Hide json</a><br><br>
+		</div>
+
+        <div ng-show="showJson">
+            <h4>Form object content:</h4>
+            <pre>{{ form | json }}</pre>
+        </div>
+    </div>
+
+    <div class="form-fields-preview" ng-show="previewMode">
+
+        <h2>{{ form.form_name }}</h2>
+
+<div ng-show="!form.submitted">
+
+    <form name="myForm" id="myForm">
+        <div ng-repeat="field in form.form_fields">
+            <field-directive field="field">
+
+            </field-directive>
+        </div>
+    </form>
+
+
+    <div class="form-actions">
+        <p class="text-center">
+            <button class="btn btn-success right" type="button" ng-disabled="!myForm.$valid" ng-click="submit()"> Submit Form</button>
+            <button class="btn btn-danger right" type="button" ng-click="cancel()">Cancel</button>
+        </p>
+    </div>
+</div>
+
+<div ng-show="form.submitted">
+    <h3>Submitted Data</h3>
+    <div ng-repeat="field in form.form_fields">
+        Field Title: {{ field.field_title }} <br>
+        Field Value: {{ field.field_value }} <br><br>
+    </div>
+</div>
+
+        <p class="text-center">
+    <button class="btn btn-primary btn-large right" type="button" ng-click="previewOff()">Back</button>
+        </p>
+    </div>
+</div>
+

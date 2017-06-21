@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery.getJSON demo</title>
+  <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+  <script type="text/javascript" src="http://pubnub.github.io/eon/v/eon/0.0.10/eon.js"></script>
+<link type="text/css" rel="stylesheet" href="http://pubnub.github.io/eon/v/eon/0.0.10/eon.css">
+</head>
+<body>
+<div id="chart"></div>
+<script>
+var pubnub = PUBNUB.init({
+      publish_key: 'pub-c-3588af66-9bbd-4984-b578-27f5877f17db',
+      subscribe_key: 'sub-c-598e4d8e-e9e4-11e4-91d3-0619f8945a4f'
+      });
+      var channel = "Kcteee";
+      eon.chart({
+        channel: channel,
+        history: true,
+        flow: true,
+        pubnub: pubnub,
+        debug: true,
+
+        generate: {
+          bindto: '#chart',
+          data: {
+            labels: false,
+            type:'bar'
+          }
+        },
+
+        transform: function(a) {
+          return {
+            eon: {
+              'temp': a[0],
+              'volyage': a[1],
+              'current': a[2],
+              'speed': a[3],
+              'category-5': a[4]
+            }
+          };
+        }
+      });
+(function() {
+  var sensors = "http://api.thingspeak.com/channels/18675/feed/last.json";
+  $.getJSON( sensors, {
+    format: "json"
+  })
+    .done(function( data ) {
+        setInterval(function(){ 
+        var f1=data.field4;
+        var f2=data.field5;
+        var f3=data.field6;
+        var f4=data.field7;
+        var f5=data.field8;
+        console.log(f1,f2,f3,f4);  
+        pubnub.publish({
+          channel: channel,
+          message: [f1,f2,f3,f4,f5]
+     });
+        }, 15000);
+    });
+})();
+</script>
+ 
+</body>
+</html>

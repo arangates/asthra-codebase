@@ -1,0 +1,107 @@
+<html>
+<head>
+<style type="text/css">
+ input{
+ border:5px solid orange;
+ border-radius:50px;
+ }
+ h1{
+  color:orange;
+  font-size:22px;
+  text-align:center;
+ }
+   button{
+       background-color:orange;
+       padding: 10px 50px;
+       color: white;
+       border: none;
+        
+    }
+</style>
+</head>
+<body>
+<h1>Testing</h1>
+<div>
+DEMAND:<input type="number" id="demand">
+STOCK: <input type="number" id="stock">
+<button onclick="myFunction()">Try it</button>
+    <p id="demo"></p>
+    <p id="calc"></p>
+</div>
+    <script>
+function myFunction() {
+    var x = document.getElementById("demand").value;
+    var y = document.getElementById("stock").value;
+    var products=
+{
+  "c1" : {
+            "name"      : "c1",
+            "productid" : "1010",
+            "inventory" : "500",
+            "demand"    : "150",
+            "production": "0",
+            "moq"       : "100",
+            "max_stock"       : "405",
+            "min_stock"       : "130",
+            "safety"    : "200",
+            "pdays"         : "mon,tue",
+            "category_size" : "20",
+            "min_die"       :"20",
+            "min_fabric"    : "30",
+            "min_fragrance" : "40",
+            "delivery_date" : "2016-03-03", 
+            "rawmaterial_die"       : "5",
+            "rawmaterial_fabric"    : "56",
+            "rawmaterial_fragrance" : "89",
+            "production_capacity"   : "200"
+        }
+};
+var start_inventory=products.c1.inventory;
+var actual_inventory ;
+var actual_max       ;
+var actual_safety    ;
+var actual_min       ;
+var inventory_movement;
+
+inventory_movement=(products.c1.inventory-products.c1.demand)+products.c1.production;
+
+actual_inventory = products.c1.inventory - products.c1.demand;
+actual_max       = actual_inventory- products.c1.max_stock;
+actual_safety    = actual_inventory- products.c1.safety;
+actual_min       = actual_inventory- products.c1.min_stock;
+
+if(actual_inventory<products.c1.safety)
+{   
+   
+    console.log("!!!Below safety of" + actual_safety +"...checkin if its below Minimum!!!");
+    if (actual_inventory<=products.c1.min_stock) {
+         if(actual_inventory<=0){console.log('!!!! STOCKOUT !!!!!');}
+
+        console.log('Yes...Below Min of ' + actual_min + '...start Production!!!');
+    }
+    else {
+
+        console.log('Above min of '+ actual_min +'...now ,bring it to Safety');
+         
+    }
+   
+}
+
+else 
+{
+    console.log("Over safety of "+ actual_safety+ "...checkin if its over-max ");
+     if (actual_inventory>products.c1.max_stock) {
+        console.log('yes!!! Over max of' + actual_max +'...no more Production!!!');
+    }
+    else {
+        console.log('No...its Below max only');
+    }
+}
+
+// console.log('')
+    document.getElementById("demo").innerHTML = "demand is " + x +" and the stock "+ y +"...";
+    document.getElementById("calc").innerHTML ="Now calculating production";
+}
+</script>
+</body>
+</html>

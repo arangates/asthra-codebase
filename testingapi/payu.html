@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>plan my trip</title>
+</head>
+<body>
+<script type="text/javascript" 
+    src="https://api.juspay.in/pay.js"></script>
+ 
+<!-- The payment form goes here. -->
+<!-- You need to validate the form. -->
+<!-- Ensure form elements don't have name attr. -->
+ 
+<script type="text/javascript">
+Juspay.Setup({
+    payment_form: "#payment_form",
+    success_handler: function(status) {},
+    error_handler: function(error_code, 
+            error_message, bank_error_code, 
+            bank_error_message, gateway_id) {},
+    type: "express" // optional
+})
+</script>
+<iframe src="https://api.juspay.in/merchant/ipay?order_id=1458895024255&merchant_id=aranganathan" 
+    width="630" height="400" 
+    style="padding: 20px;height: auto;min-height: 300px;border: 1px solid #CCC;">
+</iframe>
+<div class="pm-button"><a href="https://www.payumoney.com/paybypayumoney/#/511FBE3E47BF6B0D436248002B1FF8B8"><img src="https://www.payumoney.com//media/images/payby_payumoney/buttons/233.png" /></a></div>
+</body>
+</html>

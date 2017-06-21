@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>raxor</title>
+</head>
+<body>
+<form action="/purchase" method="POST">
+<!-- Note that the amount is in paise = 50 INR -->
+<script
+    src="https://checkout.razorpay.com/v1/checkout.js"
+    data-key="rzp_test_cb2z6Bt2EkoEaA"
+    data-amount="5000" 
+    data-name="Planmytrip"
+    data-description="CBE - BLR tour package"
+    data-image="http://www.rbipremium.com/assets/images/hotel-flight-bookings/planmytrip_img.jpg"
+    
+    data-theme.color="#F37254"
+></script>
+<input type="hidden" value="Hidden Element" name="hidden">
+</form>
+</body>
+</html>
+<!-- data-prefill.name="Shrihari" 
+	    data-prefill.email="support@coimbatpretaxis.com"
+
+  -->
